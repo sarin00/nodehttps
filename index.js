@@ -37,7 +37,7 @@ app.get('/api/users', (req, res) => {
 // Get a user by name
 app.get('/api/users/:name', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    const newuser = users.some(users => users.name === req.params.name);
+    const newuser = users.find(users => users.name === req.params.name);
     if (newuser){
         res.json(newuser);
     }
